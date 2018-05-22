@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simulateur pas_de_temps="1" nom_scenario="sim4">
+    <choses/>
+    <animaux>
+        <chose xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="animal">
+            <coordonnees>
+                <x>2</x>
+                <y>0</y>
+            </coordonnees>
+            <name>Animal_0</name>
+            <vie>0.75</vie>
+        </chose>
+        <chose xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="animal">
+            <coordonnees>
+                <x>3</x>
+                <y>0</y>
+            </coordonnees>
+            <name>Animal_1</name>
+            <vie>1.0</vie>
+        </chose>
+        <chose xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="animal">
+            <coordonnees>
+                <x>1</x>
+                <y>3</y>
+            </coordonnees>
+            <name>Animal_2</name>
+            <vie>3.0</vie>
+        </chose>
+    </animaux>
+    <vegetaux/>
+    <sizeX>5</sizeX>
+    <sizeY>5</sizeY>
+</simulateur>

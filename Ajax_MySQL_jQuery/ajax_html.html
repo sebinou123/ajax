@@ -1,0 +1,40 @@
+<html>
+	<body>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script>
+		$(document).ready(function(){
+			 $("#b1").click(function(){
+				
+				$('#ajaxDiv').html("<b>Chargement de la reponse ...</b>");
+				var age = document.getElementById('age').value;
+				var wpm = document.getElementById('wpm').value;
+				var sex = document.getElementById('sex').value;
+				var queryString = "?age=" + age;
+				queryString += "&wpm=" + wpm + "&sex=" + sex;
+
+				$.get('ajax_serveur.php' + queryString,$(this).serialize(), function(data){
+				
+				$('#ajaxDiv').html(data);
+				}).fail(function(){
+					alert("Posting failed.");
+				});
+				return false;
+			});
+		});
+			
+		</script>
+		
+		<h1> Page AJAX</h1>
+		<form name='myForm'>
+		Age max: <input type='text' id='age' /> <br/> <br/>
+		WPM max: <input type='text' id='wpm' /> <br/> <br/>
+		Sexe:
+		<select id="sex">
+			<option value='m'>m</option>
+			<option value='f'>f</option>
+		</select><br/> <br/>
+		<input id="b1" type='button' value='Requete  MySQL'>
+		</form>
+		<div id='ajaxDiv'></div><br/>
+	</body>
+</html>

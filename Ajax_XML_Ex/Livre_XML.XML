@@ -1,0 +1,30 @@
+<Libraire>
+	<Livre>
+		<TITRE>Sebinou123</TITRE>
+		<CATEGORIE>Cuisine</CATEGORIE>
+		<AUTEUR>Sebastien Fillion</AUTEUR>
+		<PUBLICATION>BOB.INC</PUBLICATION>
+		<PRIX>12.00</PRIX>
+	</Livre>
+	<Livre>
+		<TITRE>Full rapide</TITRE>
+		<CATEGORIE>Java</CATEGORIE>
+		<AUTEUR>Pile Duracel</AUTEUR>
+		<PUBLICATION>BOB.INC</PUBLICATION>
+		<PRIX>16.00</PRIX>
+	</Livre>
+	<Livre>
+		<TITRE>La légende du tacos volant</TITRE>
+		<CATEGORIE>Fiction</CATEGORIE>
+		<AUTEUR>Pablo Montoya</AUTEUR>
+		<PUBLICATION>LIVRE.INC</PUBLICATION>
+		<PRIX>100.00</PRIX>
+	</Livre>
+	<Livre>
+		<TITRE>Harry Potter 58: la légende</TITRE>
+		<CATEGORIE>Fiction</CATEGORIE>
+		<AUTEUR>Quelqu'un</AUTEUR>
+		<PUBLICATION>LIVRE.INC</PUBLICATION>
+		<PRIX>128.22</PRIX>
+	</Livre>
+</Libraire>

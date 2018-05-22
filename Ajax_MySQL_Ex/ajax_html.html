@@ -1,0 +1,68 @@
+<html>
+	<body>
+		<script language="javascript" type="text/javascript">
+		//Code pour les navigateurs
+		function ajaxFunction(){
+			var ajaxRequest; //La variable qui met ajax possible
+			try{
+				// Opera 8.8+, Firefox, Safari
+				ajaxRequest = new XMLHttpRequest();
+			}catch (e){
+
+				// Internet explorer
+				try{
+					ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+				}catch (e) {
+					try{
+						ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+					}catch (e) {
+
+						//un pprobleme est survenu
+						alert("Votre navigateur ne fonctionne pas!");
+						return false;
+
+					}
+				}
+			}
+
+			//Créer une fonction qui va recevoir des données envoyées
+			//par le serveur et mettra à jour la section <div> dans la même page.
+			
+			ajaxRequest.onreadystatechange = function(){
+
+				if(ajaxRequest.readyState == 4){
+					var ajaxDisplay = document.getElementById('ajaxDiv');
+					ajaxDisplay.innerHTML = ajaxRequest.responseText;
+				}
+
+			}
+
+			// Maintenant obtenir les données fournies par l'utilisateur
+			// et les transmettre au script du serveur
+			
+			var dept = document.getElementById('dept').value;
+			var salaire = document.getElementById('salaire').value;
+			var queryString = "?dept=" + dept + "&salaire=" + salaire;
+
+			ajaxRequest.open("GET", "ajax_serveur.php" + queryString, true);
+			ajaxRequest.send(null);
+		}
+		
+			
+		</script>
+		
+		<h1> Page AJAX</h1>
+		<form name='myForm'>
+		Salaire: <input type='text' id='salaire' /> <br/> <br/>
+		Departement:
+		<select id="dept">
+			<option value='10'>10</option>
+			<option value='20'>20</option>
+			<option value='30'>30</option>
+			<option value='40'>40</option>
+		</select><br/> <br/>
+		<input type='button' onclick='ajaxFunction()' value='Resultat'>
+		</form>
+		<div id='ajaxDiv'>Resultat de votre requete ci-dessous:</div><br/>
+	</body>
+</html>

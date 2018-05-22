@@ -1,0 +1,47 @@
+<html>
+	<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+			$('#cds').change(function(){
+			var auteur = document.getElementById('cds').value;
+			$.ajax({
+				type: "GET",
+				dataType: "xml",
+				url: "CD_XML.xml",
+				success: function(xml){
+				$(xml).find('CD').each(function(){
+					if($(this).find('ARTIST').text() == auteur)
+					{
+						$("#txtHint").append(
+						'<p>TITLE: '+$(this).find('TITLE').text() +
+						'<br /> ARTIST: '+$(this).find('ARTIST').text() +
+						'<br /> COUNTRY: '+$(this).find('COUNTRY').text() +
+						'<br /> COMPANY: '+$(this).find('COMPANY').text() +
+						'<br /> PRICE: '+$(this).find('PRICE').text() +
+						'<br /> YEAR: '+$(this).find('YEAR').text() +
+						'</p>'
+						);
+					}
+					});
+				}
+			});
+			});
+			});
+		</script>
+	</head>
+	
+<body>
+	<h1>AJAX avec HTML</h1>
+	<form>
+		Select a CD:
+			<select name="cds" id="cds">
+				<option value="">Select a CD:</option>
+				<option value="Bob Dylan">Bob Dylan</option>
+				<option value="Bonnie Tyler">Bonnie Tyler</option>
+				<option value="Dolly Parton">Dolly Parton</option>
+			</select>
+	</form>
+	<div id="txtHint"><b>CD info will be listen here...</b></div>
+</body>
+</html>

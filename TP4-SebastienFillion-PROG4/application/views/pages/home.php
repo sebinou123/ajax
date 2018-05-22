@@ -1,0 +1,1 @@
+<p style="color: white">Bienvenue sur le site du simulateur de lapinou. Un site interactif ou les utilisateurs peuvent uploader leur propre simulation et les visualisers. C'est tout, have fun!<br/>

@@ -1,0 +1,12 @@
+#map {
+	width: 500px;
+	height: 400px;
+	float: left;
+	margin-right: 20px;
+}
+#directions	{
+	width: 300px;
+	height: 400px;
+	float: left;
+	overflow:auto;
+}
